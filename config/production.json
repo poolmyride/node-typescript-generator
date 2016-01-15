@@ -1,0 +1,8 @@
+{
+  "errorHandling" : false,
+  "port" : 8080,
+  "db":{
+    "name":"bot",
+    "port":27017
+  }
+}
