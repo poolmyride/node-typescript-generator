@@ -1,6 +1,6 @@
 // Mongo
-import mongodb = require('mongodb');
-import appConfig = require('./config/appConfig')
+import * as mongodb from 'mongodb';
+import appConfig from './config/appConfig'
 var server = new mongodb.Server('localhost', 27017, {auto_reconnect: true})
 var db = new mongodb.Db(appConfig.get('db:name'), server, { w: 1 });
 db.open(function() {});

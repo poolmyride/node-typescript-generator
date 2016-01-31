@@ -2,9 +2,9 @@ var http = require("http");
 var url = require("url");
 var express = require("express");
 var bodyParser = require("body-parser");
-var errorHandler = require("errorhandler");
+var errorhandler = require("errorhandler");
 var methodOverride = require("method-override");
-var appConfig = require("./config/appConfig");
+var appConfig_1 = require("./config/appConfig");
 var index = require("./routes/index");
 var db = require("./db");
 var app = express();
@@ -16,8 +16,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(methodOverride());
 app.use(express.static(__dirname + '/public'));
-if (appConfig.get("errorHandling")) {
-    app.use(errorHandler());
+if (appConfig_1["default"].get("errorHandling")) {
+    app.use(errorhandler());
 }
 // Routes
 app.get('/', index.get);
@@ -103,7 +103,7 @@ app.get('/image/:imageid', function (req, res) {
         });
     });
 });
-var port = appConfig.get("port");
+var port = appConfig_1["default"].get("port");
 app.listen(port, function () {
     console.log("Demo Express server listening on port %d in %s mode", port, app.settings.env);
 });

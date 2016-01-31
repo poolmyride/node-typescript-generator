@@ -2,13 +2,13 @@
  * Created by rohittalwar on 15/01/16.
  */
 import * as nconf from "nconf";
-import path = require("path")
+import * as path from "path"
 
 var currentEnv = process.env.NODE_ENV || "development";
 
 
-nconf.argv()
+ nconf.argv()
     .env()
     .file({ file: 'config/'+currentEnv+'.json' });
 
-export = nconf
+export default nconf

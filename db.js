@@ -1,8 +1,8 @@
 // Mongo
 var mongodb = require('mongodb');
-var appConfig = require('./config/appConfig');
+var appConfig_1 = require('./config/appConfig');
 var server = new mongodb.Server('localhost', 27017, { auto_reconnect: true });
-var db = new mongodb.Db(appConfig.get('db:name'), server, { w: 1 });
+var db = new mongodb.Db(appConfig_1["default"].get('db:name'), server, { w: 1 });
 db.open(function () { });
 function getUser(id, callback) {
     db.collection('users', function (error, users) {

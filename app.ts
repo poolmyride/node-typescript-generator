@@ -2,9 +2,9 @@ import * as http from "http";
 import * as url from "url";
 import * as express from "express";
 import * as bodyParser from "body-parser";
-import errorHandler = require("errorhandler");
-import methodOverride = require("method-override");
-import * as appConfig from "./config/appConfig"
+import * as errorhandler from "errorhandler";
+import * as methodOverride from "method-override";
+import  appConfig from "./config/appConfig"
 import * as index from "./routes/index";
 import * as db from "./db";
 
@@ -21,7 +21,7 @@ app.use(methodOverride());
 app.use(express.static(__dirname + '/public'));
 
 if (appConfig.get("errorHandling")) {
-    app.use(errorHandler());
+    app.use(errorhandler());
 }
 
 

@@ -6,5 +6,6 @@ var currentEnv = process.env.NODE_ENV || "development";
 nconf.argv()
     .env()
     .file({ file: 'config/' + currentEnv + '.json' });
-module.exports = nconf;
+exports.__esModule = true;
+exports["default"] = nconf;
 //# sourceMappingURL=appConfig.js.map

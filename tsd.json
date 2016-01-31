@@ -18,7 +18,7 @@
       "commit": "fc341765ebbb04b7109981a25dced01f488f4d94"
     },
     "node/node.d.ts": {
-      "commit": "fc341765ebbb04b7109981a25dced01f488f4d94"
+      "commit": "138ad74b9e8e6c08af7633964962835add4c91e2"
     },
     "method-override/method-override.d.ts": {
       "commit": "fc341765ebbb04b7109981a25dced01f488f4d94"
@@ -31,6 +31,18 @@
     },
     "nconf/nconf.d.ts": {
       "commit": "7577a2f4c134790891c52affdacdae99d802571b"
+    },
+    "es6-promise/es6-promise.d.ts": {
+      "commit": "7577a2f4c134790891c52affdacdae99d802571b"
+    },
+    "mongoose/mongoose.d.ts": {
+      "commit": "138ad74b9e8e6c08af7633964962835add4c91e2"
+    },
+    "q/Q.d.ts": {
+      "commit": "138ad74b9e8e6c08af7633964962835add4c91e2"
+    },
+    "dojo/dojo.d.ts": {
+      "commit": "5d0f2126c8dac8fce0ff020218aea06607213b0d"
     }
   }
 }

@@ -1,7 +1,6 @@
-import express = require("express")
-import db = require("../db")
+import * as express from "express"
+import * as db from "../db"
 
-module index {
     export function get(req:express.Request, res:express.Response) {
         db.getUsers(function (users) {
             console.dir(users);
@@ -9,6 +8,5 @@ module index {
         });
     };
 
-}
 
-export = index
+
