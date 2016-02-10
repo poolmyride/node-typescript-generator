@@ -4,7 +4,7 @@ import * as mongoose from "mongoose"
 
 export class AppModel{
     mongooseModel:mongoose.Model<any>;
-    constructor(mongooseModel:mongoose.Model<any>){
+    constructor(mongooseModel?:mongoose.Model<any>){
         this.mongooseModel = mongooseModel
     }
 
