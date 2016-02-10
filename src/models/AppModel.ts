@@ -2,7 +2,7 @@
 import  {Deferred} from 'dojo/Promise'
 import * as mongoose from "mongoose"
 
-export class AppModel{
+ class AppModel{
     mongooseModel:mongoose.Model<any>;
     constructor(mongooseModel?:mongoose.Model<any>){
         this.mongooseModel = mongooseModel
@@ -111,3 +111,4 @@ export class AppModel{
 
 }
 
+export default AppModel

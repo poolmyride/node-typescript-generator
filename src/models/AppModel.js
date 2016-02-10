@@ -97,5 +97,6 @@ var AppModel = (function () {
     };
     return AppModel;
 })();
-exports.AppModel = AppModel;
+exports.__esModule = true;
+exports["default"] = AppModel;
 //# sourceMappingURL=AppModel.js.map

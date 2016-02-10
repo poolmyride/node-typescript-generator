@@ -11,5 +11,5 @@ var Bot = (function (_super) {
         this.mongooseModel = mongooseModel;
     }
     return Bot;
-})(AppModel_1.AppModel);
+})(AppModel_1["default"]);
 //# sourceMappingURL=Bot.js.map

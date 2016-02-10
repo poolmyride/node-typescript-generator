@@ -1,4 +1,4 @@
-import {AppModel} from '../../src/models/AppModel'
+import AppModel from '../../src/models/AppModel'
 describe("AppModel",()=>{
     var model:AppModel
     beforeEach(()=>{
