@@ -5,7 +5,7 @@ import * as mongoose from "mongoose"
 
 class Bot extends AppModel{
 
-    constructor(mongooseModel:mongoose.Model<any>){
+    constructor(mongooseModel?:mongoose.Model<any>){
         super(mongooseModel)
         this.mongooseModel = mongooseModel
     }
