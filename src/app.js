@@ -1,9 +1,11 @@
+var markoRequire = require("marko/node-require");
+markoRequire.install();
 var express = require("express");
 var bodyParser = require("body-parser");
 var errorhandler = require("errorhandler");
 var methodOverride = require("method-override");
 var appConfig_1 = require("./config/appConfig");
-var index = require("./routes/index");
+var index = require("./pages/home/index");
 var app = express();
 // Configuration
 app.set('views', __dirname + '/views');

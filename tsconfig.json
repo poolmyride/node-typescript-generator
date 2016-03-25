@@ -5,10 +5,10 @@
     },
     "filesGlob": [
         "./src/**/*.ts",
-        "./typings/tsd.d.ts",
         ".tests/**/*.ts"
     ],
     "exclude":[
-        "node_modules"
+        "node_modules",
+        "src/templates/"
     ]
 }

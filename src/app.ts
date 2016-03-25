@@ -1,3 +1,5 @@
+import * as markoRequire from "marko/node-require"
+markoRequire.install()
 import * as http from "http";
 import * as url from "url";
 import * as express from "express";
@@ -5,7 +7,7 @@ import * as bodyParser from "body-parser";
 import * as errorhandler from "errorhandler";
 import * as methodOverride from "method-override";
 import  appConfig from "./config/appConfig"
-import * as index from "./routes/index";
+import * as index from "./pages/home/index";
 import * as db from "./db";
 
 var app = express();
