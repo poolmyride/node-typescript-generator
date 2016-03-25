@@ -11,4 +11,7 @@
 /// <reference path="q/Q.d.ts" />
 /// <reference path="node/node.d.ts" />
 /// <reference path="dojo2/dojo.d.ts" />
-/// <reference path="mocha/mocha.d.ts" />
+/// <reference path="bluebird/bluebird.d.ts" />
+/// <reference path="form-data/form-data.d.ts" />
+/// <reference path="request/request.d.ts" />
+
