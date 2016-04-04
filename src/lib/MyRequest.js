@@ -1,3 +1,4 @@
+"use strict";
 var nodeRequest = require("request");
 var Promise = require("bluebird");
 function request(urlStr, options) {

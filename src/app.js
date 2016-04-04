@@ -1,3 +1,4 @@
+"use strict";
 var markoRequire = require("marko/node-require");
 markoRequire.install();
 var express = require("express");

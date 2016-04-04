@@ -1,3 +1,4 @@
+"use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -11,5 +12,5 @@ var Bot = (function (_super) {
         this.mongooseModel = mongooseModel;
     }
     return Bot;
-})(AppModel_1["default"]);
+}(AppModel_1["default"]));
 //# sourceMappingURL=Bot.js.map

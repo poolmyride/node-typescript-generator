@@ -1,4 +1,5 @@
-var Promise_1 = require('dojo/Promise');
+"use strict";
+var Promise = require('bluebird');
 var AppModel = (function () {
     function AppModel(mongooseModel) {
         this.mongooseModel = mongooseModel;
@@ -7,28 +8,31 @@ var AppModel = (function () {
         return typeof params === "string" ? this._getRecordByID(params) : this._getRecordByQuery(params);
     };
     AppModel.prototype._getRecordByQuery = function (query) {
-        var def = new Promise_1.Deferred();
-        this.mongooseModel.findOne(query).lean().exec(function (err, doc) {
-            return err ? def.reject(err) : (doc ? def.resolve(doc) : def.reject(new Error("Not found")));
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.mongooseModel.findOne(query).lean().exec(function (err, doc) {
+                return err ? reject(err) : (doc ? resolve(doc) : reject(new Error("Not found")));
+            });
         });
-        return def.promise;
     };
     AppModel.prototype._getRecordByID = function (id) {
-        var def = new Promise_1.Deferred();
-        this.mongooseModel.findById(id).lean().exec(function (err, doc) {
-            return err ? def.reject(err) : (doc ? def.resolve(doc) : def.reject(new Error("Not found")));
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.mongooseModel.findById(id).lean().exec(function (err, doc) {
+                return err ? reject(err) : (doc ? resolve(doc) : reject(new Error("Not found")));
+            });
         });
-        return def.promise;
     };
     AppModel.prototype.query = function (query, options) {
-        var def = new Promise_1.Deferred();
-        var queryObj = this.mongooseModel.find(query);
-        queryObj = this._addQueryOptions(queryObj, options);
-        queryObj = queryObj.lean();
-        queryObj.exec(function (err, result) {
-            err ? def.reject(err) : def.resolve(result);
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            var queryObj = _this.mongooseModel.find(query);
+            queryObj = _this._addQueryOptions(queryObj, options);
+            queryObj = queryObj.lean();
+            queryObj.exec(function (err, result) {
+                err ? reject(err) : resolve(result);
+            });
         });
-        return def.promise;
     };
     AppModel.prototype._addQueryOptions = function (queryObj, options) {
         options = options || {};
@@ -49,34 +53,38 @@ var AppModel = (function () {
         return queryObj;
     };
     AppModel.prototype.put = function (id, body) {
-        var def = new Promise_1.Deferred();
+        var _this = this;
         delete body._id;
-        this.mongooseModel.findByIdAndUpdate(id, body).lean().exec(function (err, result) {
-            return err ? def.reject(err) : def.resolve(result);
+        return new Promise(function (resolve, reject) {
+            _this.mongooseModel.findByIdAndUpdate(id, body).lean().exec(function (err, result) {
+                return err ? reject(err) : resolve(result);
+            });
         });
-        return def.promise;
     };
     AppModel.prototype.add = function (body) {
-        var def = new Promise_1.Deferred();
-        new this.mongooseModel(body).save(function (err, pool) {
-            return err ? def.reject(err) : def.resolve(pool);
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            new _this.mongooseModel(body).save(function (err, pool) {
+                return err ? reject(err) : resolve(pool);
+            });
         });
-        return def.promise;
     };
     AppModel.prototype.remove = function (ids) {
+        var _this = this;
         var query = this._constructRemoveQuery(ids);
-        var def = new Promise_1.Deferred();
-        this.mongooseModel.remove(query).exec(function (err, result) {
-            return err ? def.reject(err) : def.resolve(result);
+        return new Promise(function (resolve, reject) {
+            _this.mongooseModel.remove(query).exec(function (err, result) {
+                return err ? reject(err) : resolve(result);
+            });
         });
-        return def.promise;
     };
     AppModel.prototype.removeUsingQuery = function (query) {
-        var def = new Promise_1.Deferred();
-        this.mongooseModel.remove(query).exec(function (err, result) {
-            return err ? def.reject(err) : def.resolve(result);
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.mongooseModel.remove(query).exec(function (err, result) {
+                return err ? reject(err) : resolve(result);
+            });
         });
-        return def.promise;
     };
     AppModel.prototype._constructRemoveQuery = function (ids) {
         var query = ids || {};
@@ -96,7 +104,7 @@ var AppModel = (function () {
         return query;
     };
     return AppModel;
-})();
+}());
 exports.__esModule = true;
 exports["default"] = AppModel;
 //# sourceMappingURL=AppModel.js.map

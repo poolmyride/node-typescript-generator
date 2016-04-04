@@ -12,7 +12,7 @@ export function request(urlStr:string,options?:any):Promise<any>{
     var prom = new Promise((resolve,reject)=>{
 
         nodeRequest(urlStr,options,(error,response,body)=>{
-            response.data = body
+            (response as any).data = body
             error ? reject(error) : resolve(response)
         })
     })

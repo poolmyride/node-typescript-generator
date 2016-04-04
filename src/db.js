@@ -1,3 +1,4 @@
+"use strict";
 // Mongo
 var mongodb = require('mongodb');
 var appConfig_1 = require('./config/appConfig');

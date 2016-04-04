@@ -1,3 +1,4 @@
+"use strict";
 var template = require('./template.marko');
 function get(req, res) {
     //db.getUsers(function (users) {

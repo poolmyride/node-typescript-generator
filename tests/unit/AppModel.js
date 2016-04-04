@@ -1,3 +1,4 @@
+"use strict";
 var AppModel_1 = require('../../src/models/AppModel');
 describe("AppModel", function () {
     var model;
