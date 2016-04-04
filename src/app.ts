@@ -8,7 +8,6 @@ import * as errorhandler from "errorhandler";
 import * as methodOverride from "method-override";
 import  appConfig from "./config/appConfig"
 import * as index from "./pages/home/index";
-import * as db from "./db";
 
 var app = express();
 
